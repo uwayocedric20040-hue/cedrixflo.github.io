@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUP PAWS TRAINING</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #f9f6f0;
+            color: #2d2d2d;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 5px solid #f39c12;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #f39c12;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f39c12;
+        }
+        .hero {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero h1 span {
+            color: #f39c12;
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            background: #f39c12;
+            color: #2c3e50;
+            padding: 14px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background: #e67e22;
+            transform: scale(1.05);
+        }
+        .services {
+            padding: 70px 0;
+            background: #fff;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+        .section-title span {
+            color: #f39c12;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: #f9f6f0;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: box-shadow 0.3s, transform 0.3s;
+            border-bottom: 4px solid #f39c12;
+        }
+        .service-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .service-card h3 {
+            font-size: 22px;
+            margin: 15px 0 10px;
+            color: #2c3e50;
+        }
+        .service-card p {
+            color: #555;
+            font-size: 15px;
+        }
+        .service-icon {
+            font-size: 48px;
+        }
+        .about {
+            padding: 70px 0;
+            background: #f9f6f0;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-grid .placeholder-img {
+            width: 100%;
+            height: 300px;
+            background: #2c3e50;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f39c12;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .about-grid h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .about-grid h2 span {
+            color: #f39c12;
+        }
+        .about-grid ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .about-grid ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0dcd5;
+        }
+        .about-grid ul li::before {
+            content: "🐾 ";
+        }
+        .contact {
+            padding: 70px 0;
+            background: #2c3e50;
+            color: #fff;
+        }
+        .contact .section-title {
+            color: #fff;
+        }
+        .contact .subtitle {
+            color: #bdc3c7;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        .contact-info p {
+            margin: 15px 0;
+            font-size: 17px;
+        }
+        .contact-info strong {
+            color: #f39c12;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        .contact-form .btn {
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        footer {
+            background: #1a252f;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 14px;
+        }
+        footer span {
+            color: #f39c12;
+        }
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="logo">PUP PAWS <span>TRAINING</span></div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+<section class="hero">
+    <div class="container">
+        <h1>Train Smarter.<br><span>Live Better.</span></h1>
+        <p>Professional dog training based on trust, positive reinforcement, and real results.</p>
+        <a href="#contact" class="btn">Book a Session</a>
+    </div>
+</section>
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">What We <span>Offer</span></h2>
+        <p class="subtitle">Tailored programs for every dog and owner</p>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">🐶</div>
+                <h3>Puppy Essentials</h3>
+                <p>Socialization, potty training, and basic commands for pups under 6 months.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3>Obedience Basics</h3>
+                <p>Sit, stay, recall, and loose-leash walking for dogs of all ages.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Behavioral Rehab</h3>
+                <p>Specialized help for aggression, anxiety, and reactive behavior.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏆</div>
+                <h3>Advanced Skills</h3>
+                <p>Off-leash control, scent work, and competition-level training.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="placeholder-img">🐕 DOG TRAINING</div>
+            <div>
+                <h2>Built on <span>Trust</span></h2>
+                <p>We use science-backed, positive reinforcement methods to build a strong bond between you and your dog.</p>
+                <ul>
+                    <li>Certified trainers with 10+ years experience</li>
+                    <li>Customized plans for every breed and temperament</li>
+                    <li>In-home, group, and virtual sessions available</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <p class="subtitle">We'll help you find the right program</p>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p><strong>📍 Location:</strong> KIGALI ,RWANDA </p>
+                <p><strong>📞 Phone:</strong> +250 792 697 543, +250 780515506</p>
+                <p><strong>✉️ Email:</strong> uwayocedric20040@gmail.com, olwenyiandrewjunior@gmail.com</p>
+                <p><strong>⏰ Hours:</strong> Mon–Sat, 7am – 7pm</p>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Dog's Breed & Age">
+                <textarea placeholder="Tell us about your training needs..."></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <p>&copy; 2026 <span>PUP PAWS TRAINING</span>. Built with 🐾 for happy dogs & owners.</p>
+    </div>
+</footer>
+</body>
+</html>
